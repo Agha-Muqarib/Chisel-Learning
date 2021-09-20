@@ -45,7 +45,7 @@
 
 //     val shamt = io.in_A(4,0).asUInt
 //     val shin = Mux(io.alu_Op(3), Reverse(io.in_A), io.in_A)
-//     val shiftr = (Cat(io.alu_Op(0) && shin, shin(WLEN-1)).asSInt >> shamt)(WLEN-1,0)
+//     val shiftr = (Cat(io.alu_Op(0) && shin.asBool, shin(WLEN-1)).asSInt >> shamt)(WLEN-1,0)
 //     val shiftL = Reverse(shiftr)
 //     val out = Mux(io.alu_Op === ALU_ADD || io.alu_Op === ALU_SUB, sum, 
 //               Mux(io.alu_Op === ALU_SLT || io.alu_Op === ALU_SLTU, cmp, 

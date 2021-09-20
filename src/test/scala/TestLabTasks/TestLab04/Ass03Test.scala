@@ -7,7 +7,7 @@
 // import chiseltest.experimental.TestOptionBuilder._
 // import chiseltest.internal.VerilatorBackendAnnotation
 // import scala.util.Random
-// import ALUOP._
+// import aluOp._
 
 
 // class Ass03Test extends FreeSpec with ChiselScalatestTester {

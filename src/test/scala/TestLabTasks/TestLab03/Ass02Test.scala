@@ -10,13 +10,13 @@ class Ass02Test extends FreeSpec with ChiselScalatestTester {
     
         test(new ImmdValGen) { c =>
 
-        c.io.instr.poke(1.U)
-        c.io.pc.poke(1.U)
+        c.io.instr.poke("h0080056f".U)
+        c.io.pc.poke(0.U)
 
         c.clock.step(10)
 
-        c.io.immSel.expect(0.U)
+        c.io.immSel.expect(8.U)
 
+        }
     }
-}
 }

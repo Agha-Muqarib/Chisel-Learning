@@ -39,7 +39,7 @@ val XLen= 32
 
 }
 
-class ALUIO extends Bundle with Config{
+class ALUIO extends Bundle with Config {
 
     val in_A = Input(UInt(WLEN.W))
     val in_B = Input(UInt(WLEN.W))

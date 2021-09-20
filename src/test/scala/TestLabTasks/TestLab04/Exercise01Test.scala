@@ -1,30 +1,27 @@
 package Lab04
 
 import chisel3._
-import chisel3.util
+import chisel3.util._
 import org.scalatest._
 import chiseltest._
-import chiseltest.experimental.TestOptionBuilder._
-import chiseltest.internal.VerilatorBackendAnnotation
 import scala.util.Random
 import ALUOP._
 
-
 class Exercise01Test extends FreeSpec with ChiselScalatestTester {
-    
-    "Exercise 01 Test" in {
-        
-        test(new ALU) { c =>
-        
-        val array_op = Array( ALU_ADD , ALU_SUB , ALU_AND , ALU_OR , ALU_XOR , ALU_SLT ,
-                              ALU_SLL, ALU_SLTU , ALU_SRL , ALU_SRA , ALU_COPY_A , 
-                              ALU_COPY_B , ALU_XXX )
 
+  "Exercise 01 Test " in {
+      
+      test(new Exercise01) { c =>
+        
+        val array_op = Array ( ALU_ADD , ALU_SUB , ALU_AND , ALU_OR , ALU_XOR , ALU_SLT , ALU_SLL
+        , ALU_SLTU , ALU_SRL , ALU_SRA , ALU_COPY_A , ALU_COPY_B , ALU_XXX )
+        
         for ( i <- 0 until 100) {
+
             val src_a = Random.nextLong() & 0xFFFFFFFFL
             val src_b = Random.nextLong() & 0xFFFFFFFFL
-            val opr = Random.nextInt (13)
-            val aluop = array_op( opr )
+            val opr = Random.nextInt(13)
+            val aluop = array_op(opr)
             val result = aluop match {
 
                 case ALU_ADD => src_a + src_b
@@ -43,14 +40,16 @@ class Exercise01Test extends FreeSpec with ChiselScalatestTester {
             }
 
             val result1: BigInt = if ( result < 0 )
-                ( BigInt(0xFFFFFFFFL) + result + 1) & 0xFFFFFFFFL
-                
+                ( BigInt(0xFFFFFFFFL ) + result + 1) & 0xFFFFFFFFL
+            
             else result & 0xFFFFFFFFL
 
             c.io.in_A.poke(src_a.U)
             c.io.in_B.poke(src_b.U)
             c.io.alu_Op.poke(aluop)
+
             c.clock.step(1)
+
             c.io.out.expect(result1.asUInt)
 
             }
