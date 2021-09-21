@@ -1,41 +1,63 @@
-package Lab04
+// package Lab04
 
-// Immediate ( Assignment )
+// import chisel3._
+// import chisel3.util._
 
-import chisel3._
-import chisel3.util._
+// class ImmediateIO extends Bundle {
 
-class LM_IO_Interface_ImmdValGen extends Bundle {
+// 	val instr = Input(UInt(32.W))
+// 	val immSel = Output(UInt(32.W))
+//     val pc = Input(UInt(32.W))
+// }
+// class Ass02 extends Module {
+
+// 	val io = IO(new ImmediateIO)
+// 	io.immSel := 0.U
+
+
+// 	switch(io.instr(6,0)) {                 
+		
+//         // I Type
+
+//         is("b0010011".U){
+
+//             io.immSel := Cat(Fill(20,io.instr(31)),io.instr(31,20))
+
+//         }
+
+//         // S Type
+
+//         is("b0100011".U) {
+            
+//             io.immSel := Cat(Fill(20, io.instr(31)), io.instr(31, 25), io.instr(11, 7))
+	
+//         }
+
+//         // U Type
+
+//         is("b110111".U){
+            
+//             io.immSel := (Cat(io.instr(31), io.instr(30, 25), io.instr(24, 21), 
+//                                   io.instr(20),io.instr(19, 12)) << 12.U)
+//         }
+
+
+//         // B Type
+
+//         is("b1100011".U){
+		
+//             io.immSel := Cat(Fill(19,io.instr(31)),io.instr(31),io.instr(7),
+//                               io.instr(30,25),io.instr(11,8), 0.U)+io.pc
+//         }
+		
+
+//         // J Type
+
+//         is("b1101111".U){
+
+// 		    io.immSel := Cat(Fill(11,io.instr(31)),io.instr(31),io.instr(19,12),
+//                               io.instr(20),io.instr(30,25),io.instr(24,21), 0.U)
+//         }
+//     }
     
-    val instr = Input(UInt(32.W))
-    val pc = Input(UInt(32.W))
-    val immSel = Output(UInt(2.W))
-}
-
-class ImmdValGen extends Module {
-    
-    val io = IO (new LM_IO_Interface_ImmdValGen)
-    var opcode = io.instr(6,0)
-
-    val immS = Cat(io.instr(31,25), io.instr(11,7))
-    val immB = Cat (io.instr(31), io.instr(7), io.instr(30,25),io.instr(11,8), "b0".U)
-    val immJ = Cat (io.instr(31), io.instr(19,12), io.instr(20), io.instr(30,21), "b0".U)
-
-    val iType = Cat(Fill(20,io.instr(31)), io.instr(31,20))
-    val sType = Cat(Fill(20,immS(11)), immS)
-    val bType = (Cat(Fill(19, immB(12)), immB)) + io.pc
-    val uType = (Cat(Fill(12, io.instr(31)), io.instr(31,12))) << 12
-    val jType = (Cat(Fill(12, immJ(20)),immJ)) + io.pc
-
-    io.immSel := MuxCase(0.U, Array(
-
-        (opcode <= "b0010011".U || opcode >= "b0000011".U || opcode === "b0011011".U || 
-                    opcode === "b1110011".U) -> iType,
-                    
-        (opcode === "b0100011".U) -> sType,
-        (opcode === "b1100011".U) -> bType,
-        (opcode === "b0010111".U) -> uType,
-        (opcode === "b1101111".U) -> jType
-        
-        ))
-}
+// }

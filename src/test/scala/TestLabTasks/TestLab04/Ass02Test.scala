@@ -1,38 +1,33 @@
-package Lab04
+// package Lab04
 
-import chisel3._
-import chisel3.util
-import org.scalatest._
-import chiseltest._
-import chiseltest.experimental.TestOptionBuilder._
-import chiseltest.internal.VerilatorBackendAnnotation
-import scala.util.Random
+// import org.scalatest._
+// import chiseltest._
+// import chisel3._
+// import scala.util._
 
+// class Ass02Test extends FreeSpec with ChiselScalatestTester {
 
-class Ass02Test extends FreeSpec with ChiselScalatestTester {
-    
-    "Ass 02 Test" in {
-        
-        test(new ImmdValGen) { c =>
-        
-        val opcodeArray = Array("h00400613","h00300513","h00c516b3")
-
-        for (i <- 0 until 100) {
+//     "Ass 02 Test" in {
+          
+//           test(new Ass02) { c =>
+//           val instructionArray = Array("h0000fa37") //, "h00300693", "h0000c637", "h0000f7b7")
+          
+//           for (i <- 0 until 100){
             
-            val instructions = opcodeArray(Random.nextInt(2))
-            val result = instructions match {
+//               val instructions = instructionArray(Random.nextInt(1))
+//               val result = instructions match {
+ 
+//                   case ("h0000fa37") => 61440
+//                   // case ("h0000f7b7") => 15
+//                   // case ("h00300693") => 3
+//                   // case ("h0000c637") => 12
+//           }
 
-                case ("h00300513") => 3
-                case ("h00400613") => 4
-                case ("h00c516b3") => 48
-        }
+//         c.io.instr.poke(instructions.U)
+//         c.io.pc.poke(4.U)
+//         c.io.immSel.expect(result.U)
 
-        c.io.instr.poke(instructions.U)
-        c.io.pc.poke(4.U)
-
-        c.io.immSel.expect(result.U)
-
-      }
-    }
-  }
-}
+//       }
+//     }
+//   }
+// }

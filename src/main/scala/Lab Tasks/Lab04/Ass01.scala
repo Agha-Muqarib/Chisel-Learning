@@ -17,70 +17,44 @@ class BranchControl extends Module {
     
     val io = IO(new LM_IO_Interface_BranchControl)
 
-    // Unigned Operations
+    // Signed Operations
 
-    val SgreaterThan = (io.inputA.asUInt > io.inputB.asUInt)
-    val Sequality = (io.inputA.asUInt === io.inputB.asUInt)
-    val SlessThan = (io.inputA.asUInt < io.inputB.asUInt)
-    val SNotEqualsTo = (io.inputA.asUInt =/= io.inputB.asUInt)
+    val SGreaterEqual = (io.inputA >= io.inputB)
+    val SlessThan = (io.inputA < io.inputB)
 
-    // Signed Operations 
+    // Unigned Operations 
 
-    val USgreaterThan = (io.inputA > io.inputB)
-    val USequality = (io.inputA === io.inputB)
-    val USlessThan = (io.inputA < io.inputB)
-    val USNotEqualsTo = (io.inputA =/= io.inputB)
-
-
-//     io.branchTaken := MuxLookup(io.funct3, false.B , Array (
-
-//         ("b000".U) ->  USgreaterThan
-//         ("b001".U) ->  USequality.asBool()
-//         ("b010".U) ->  USlessThan.asBool()
-//         ("b011".U) ->  USNotEqualsTo.asBool()
-//         ("b100".U) ->  SgreaterThan.asBool()
-//         ("b101".U) ->  Sequality.asBool()
-//         ("b110".U) ->  SlessThan.asBool()
-    
-//     ))
-
-// }
-
+    val USgreaterThan = (io.inputA.asUInt > io.inputB.asUInt)
+    val USequality = (io.inputA.asUInt === io.inputB.asUInt)
+    val USlessThan = (io.inputA.asUInt < io.inputB.asUInt)
+    val USNotEqualsTo = (io.inputA.asUInt =/= io.inputB.asUInt)
 
     when (io.funct3 === "b000".U) {
-        io.branchTaken := USgreaterThan
+        io.branchTaken := USequality
     }
 
     .elsewhen (io.funct3 === "b001".U) {
-            io.branchTaken := USequality
+            io.branchTaken := USNotEqualsTo
     }
 
     .elsewhen (io.funct3 === "b010".U) {
             io.branchTaken := USlessThan
     }
 
-    .elsewhen (io.funct3 === "b011".U){
-        io.branchTaken := USNotEqualsTo
-    }
-
     .elsewhen (io.funct3 === "b100".U){
-        io.branchTaken := SgreaterThan
+        io.branchTaken := USgreaterThan
     }
 
     .elsewhen (io.funct3 === "b101".U){
-        io.branchTaken := Sequality
-    }
-
-    .elsewhen (io.funct3 === "b110".U){
         io.branchTaken := SlessThan
     }
 
-    .elsewhen (io.funct3 === "b111".U){
-        io.branchTaken := SNotEqualsTo
+    .elsewhen (io.funct3 === "b110".U){
+        io.branchTaken := SGreaterEqual
     }
 
     .otherwise{
-        io.branchTaken := true.B
+        io.branchTaken := false.B
 
     }
 

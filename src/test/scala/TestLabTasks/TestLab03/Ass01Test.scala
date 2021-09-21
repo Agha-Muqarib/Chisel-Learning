@@ -10,15 +10,15 @@ class Ass01Test extends FreeSpec with ChiselScalatestTester {
     
         test(new BranchControl) { c =>
 
-        c.io.inputA.poke(-2.S)
-        c.io.inputB.poke(-2.S)
+        c.io.inputA.poke(2.S)
+        c.io.inputB.poke(2.S)
 
-        c.io.funct3.poke("b111".U)
+        c.io.funct3.poke("b000".U)
 
         c.clock.step(10)
 
-        c.io.branchTaken.expect(0.B)
+        c.io.branchTaken.expect(1.B)
 
     }
 }
-}                                                                                                                                                                                                                                                                           
+}
