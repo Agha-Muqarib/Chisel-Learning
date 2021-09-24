@@ -1,5 +1,7 @@
-Scala Chisel Learning Journey
+# Scala-Chisel-Learning-Journey
 =======================
+
+The following is the repository where I trained and practiced Chisel and Scala. The following is the course that should be followed. 
 
 Start by setting up the working enviroment
 
