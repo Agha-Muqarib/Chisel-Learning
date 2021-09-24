@@ -16,7 +16,7 @@ LTS releases Java 8 and Java 11 is recommended. You can install the JDK as recom
 SBT is the most common built tool in the Scala community. It can be downloaded [here](https://www.scala-sbt.org/download.html).  
 
 
-### Getting started:
+## Getting started:
 
 Fork this repository on your own individual profiles. After forking clone the repository and run:
 
