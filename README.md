@@ -5,18 +5,18 @@ The following is the repository where I trained and practiced Chisel and Scala. 
 
 Start by setting up the working enviroment
 
-### Dependencies
+## Dependencies
 
 #### JDK 8 or newer
 
-We recommend LTS releases Java 8 and Java 11. You can install the JDK as recommended by your operating system, or use the prebuilt binaries from [AdoptOpenJDK](https://adoptopenjdk.net/).
+LTS releases Java 8 and Java 11 is recommended. You can install the JDK as recommended by your operating system, or use the prebuilt binaries from [AdoptOpenJDK](https://adoptopenjdk.net/).
 
 #### SBT 
 
-SBT is the most common built tool in the Scala community. You can download it [here](https://www.scala-sbt.org/download.html).  
+SBT is the most common built tool in the Scala community. It can be downloaded [here](https://www.scala-sbt.org/download.html).  
 
 
-### How to get started
+### Getting started:
 
 Fork this repository on your own individual profiles. After forking clone the repository and run:
 
