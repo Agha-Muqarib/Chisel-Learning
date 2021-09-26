@@ -7,15 +7,16 @@ import chisel3._
 import chiseltest.experimental.TestOptionBuilder._
 import chiseltest.internal.VerilatorBackendAnnotation
 
-class Example05Test extends FreeSpec with ChiselScalatestTester {
+class Example06Test extends FreeSpec with ChiselScalatestTester {
+"Example 06 Test" in {
     
-    "Example 05 Test" in {
-    
-    test(new Pipe).withAnnotations(Seq(VerilatorBackendAnnotation)) { c =>
-    
-    c.io.in.valid.poke(1.B)
+    test(new My_Queue).withAnnotations(Seq(VerilatorBackendAnnotation)) { c =>
+
+    c.io.in.valid.poke(true.B)
+    // c.io.in.ready.poke(true.B)
     c.io.in.bits.poke(5.U)
     c.clock.step(20)
+
 
     }
 }
