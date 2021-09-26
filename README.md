@@ -28,7 +28,7 @@ You should see a whole bunch of output that ends with something like the followi
 ![image](https://user-images.githubusercontent.com/51242857/134680755-4e814974-2d2a-456e-9d89-f71475ab8ca0.png)
 
 
-If you see the above then, ### It worked!
+If you see the above then, It worked!
 
 You are ready to go. Next step is to go inside the `docs/` folder where you will find the labs to perform.
 
