@@ -53,4 +53,4 @@ If you quickly want to see what verilog is being generated, go to this link  htt
 
 ---------------------------------------------------------------
 
-P.S: All the support documents, assignment files and PDF of Scala and Functional Programming can be accessed in [Docs](https://github.com/Agha-Muqarib/Scala-Learning/tree/main/Docs) Folder of the repository.
+P.S: All the support documents, assignment files and PDF of Scala and Functional Programming can be accessed in [Chisel Labs](https://github.com/Agha-Muqarib/Chisel-Learning/tree/main/Chisel%20Labs) Folder of the repository.
