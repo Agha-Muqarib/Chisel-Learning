@@ -1,4 +1,10 @@
-# Scala-Chisel-Learning-Journey:
+# Chisel-Learning:
+
+The repository contains the learning journey/getting familiar with Chisel, a framework of Scala. Labs have been implemented, introducing to most of the utilities in Chisel and its related concepts. 
+
+--------------------------------------------------------
+
+## Environment Setting:
 
 This repository contains the code where I trained and practiced Chisel and Scala. The following is the course that should be followed. 
 
@@ -34,3 +40,7 @@ You are ready to go. Next step is to go inside the `docs/` folder where you will
 
 ### For quick debugging:
 If you quickly want to see what verilog is being generated, go to this link  https://bit.ly/3u3zr0e and write Chisel here.
+
+---------------------------------------------------------------
+
+P.S: All the support documents, assignment files and PDF of Scala and Functional Programming can be accessed in [Docs](https://github.com/Agha-Muqarib/Scala-Learning/tree/main/Docs) Folder of the repository.
