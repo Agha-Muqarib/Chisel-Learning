@@ -2,6 +2,16 @@
 
 The repository contains the learning journey/getting familiar with Chisel, a framework of Scala. Labs have been implemented, introducing to most of the utilities in Chisel and its related concepts. 
 
+## Topics Covered:
+
+* Basic DLD Gates(And, Or, Nand, Nor, Xor, Xnor, Not) 
+* Basic Circuits (Half Adder,Full-Adder,Ecoder, Decoder, Multiplexer)
+* Parameterization (Width, Function, Bundle, Module)
+* Pipes and Queues.
+* Mux and its Types (MuxCase, MuxTree, MuxLookup, OneHotMux)
+* CPU Units (Instruction Memory, Data Memory, ALU, Register File, Immediate Geneation, Branch Control)
+* Testing (VCD, Poke-Peek-Expect)
+
 --------------------------------------------------------
 
 ## Environment Setting:
