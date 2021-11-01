@@ -5,7 +5,7 @@ The repository contains the learning journey/getting familiar with Chisel, a fra
 ## Topics Covered:
 
 * Basic DLD Gates(And, Or, Nand, Nor, Xor, Xnor, Not) 
-* Basic Circuits (Half Adder,Full-Adder,Ecoder, Decoder, Multiplexer)
+* Basic Circuits (Half Adder, Full-Adder,Ecoder, Decoder, Multiplexer)
 * Parameterization (Width, Function, Bundle, Module)
 * Pipes and Queues.
 * Mux and its Types (MuxCase, MuxTree, MuxLookup, OneHotMux)
