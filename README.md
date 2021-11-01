@@ -9,7 +9,7 @@ The repository contains the learning journey/getting familiar with Chisel, a fra
 * Parameterization (Width, Function, Bundle, Module)
 * Pipes and Queues.
 * Mux and its Types (MuxCase, MuxTree, MuxLookup, OneHotMux)
-* CPU Units (Instruction Memory, Data Memory, ALU, Register File, Immediate Geneation, Branch Control)
+* CPU Units (Instruction Memory, Data Memory, ALU, Register File, Immediate Generation, Branch Control)
 * Testing (VCD, Poke-Peek-Expect)
 
 --------------------------------------------------------
